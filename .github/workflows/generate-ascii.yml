@@ -8,18 +8,23 @@ jobs:
         steps:
             - name: Checkout Repo
               uses: actions/checkout@v4
+            
+            - name: list repo file b4 exec
+              run: ls -ltra
 
-            - name: Install Cowsay Program
-              run: sudo apt-get install cowsay -y
+            - name: lets run the script
+              run: ./ascii-script.sh
+            # - name: Install Cowsay Program
+            #   run: sudo apt-get install cowsay -y
 
-            - name: Generate Ascii artwork
-              run: cowsay -f dragon "Run for cover, Iam Dragon...raw" >> dragon.txt
+            # - name: Generate Ascii artwork
+            #   run: cowsay -f dragon "Run for cover, Iam Dragon...raw" >> dragon.txt
 
-            - name: Test file exists and see the content
-              run: | 
-                grep -i "dragon" dragon.txt
-                cat dragon.txt
-                ls -ltra
+            # - name: Test file exists and see the content
+            #   run: | 
+            #     grep -i "dragon" dragon.txt
+            #     cat dragon.txt
+            #     ls -ltra
             
 
             
